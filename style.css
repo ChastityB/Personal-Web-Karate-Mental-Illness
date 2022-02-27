@@ -1,7 +1,24 @@
+
+/* Ligth theme */
+:root {
+    --text-color: black;
+    --background-color: #C3DBFB;
+    --background-coloring: #e66465;
+}
+ 
+/* Dark theme */
+[data-theme="dark"] {
+    --text-color: white;
+    --background-color: #282828;
+    --background-coloring: black;
+}
+
 body {
-    background: #C3DBFB;
+    background: linear-gradient(var(--background-color), var(--background-coloring));
+    background-attachment: fixed;
     font-family: 'Reggae One', cursive;
 }
+
 header{
     display: block;
     margin-right: auto; 
@@ -9,6 +26,60 @@ header{
     text-align: center;
     clear: both;
 }
+/* dark mode switch */
+.switch{
+    display: flex;
+    float: right;
+    align-items: center;
+}
+.theme{
+    display: inline-block;
+    height: 25px;
+    position: relative;
+    width: 50px;
+}
+.theme input{
+    display: none;
+}
+.slider.circle{
+    border-radius: 30px;
+}
+.slider{
+    background: red;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+.slider.circle:before{
+    border-radius: 50px;
+}
+.slider:before{
+    background: white;
+    bottom: 4px;
+    content: "";
+    height: 18px; 
+    left: 4px; 
+    position: absolute;
+    transition: 0.5s; 
+    width: 18px;
+}
+em{
+    margin-left: 10px;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+input:checked+.slider {
+    background: red;
+}
+ 
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+/* Depression Symptoms */
 li {
     float: none;
     display: inline-block;
@@ -16,15 +87,21 @@ li {
 }
 li.Dep_Symp{
     display: block;
-    background-color: #C3DBFB
+    background-color: transparent;
+    color: var(--text-color);
 }
+/* resources */
+#OtherResources p {
+    text-align: left;
+}
+/* slideshow images */
 .Slideshow{
     overflow: hidden;
     margin: auto;
     position: relative;
     width: 350px;
     height: 400px;
-    padding-bottom: 10%;
+    padding-bottom: 20%;
 }
 .Slideshow img {
     position: absolute;
@@ -42,24 +119,23 @@ li.Dep_Symp{
 .Slideshow img:nth-child(2){animation-delay:5s;}
 .Slideshow img:nth-child(1){animation-delay:10s;}
 
-/* img{
+/* Images */
+.window-girl, .Karate-kids, .heart-hands, .question{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 40px; 
-    border: 2px solid #D50101;
-    height: 400px;
-    width: 100%
-} */
+    width: 50%;
+}
 
 a{
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
 }
 .Dep_Symp a{
-    color: black;
+    color: var(--text-color);
     text-decoration: underline;
 }
+/* Button */
 button{
     background-color: #D50101;
     color: white;
@@ -94,16 +170,27 @@ button{
 .dropwdown:hover .dropbtn{
     background-color: red;
 }
+/* Rest of the page */
 h1, h2, h3, h4, p{
     text-align: center;
+    color: var(--text-color);
+}
+h1{
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    color: white;
 }
 .About_Mental_Illness h3, .Why_Martial_Arts h3{
     border: 2px solid #D50101; 
     border-radius: 30px; 
+    color: var(--text-color);
 }
 .Intro h2, .About_Me h2, .About_Mental_Illness h2, .Why_Martial_Arts h2, .Other_Resources h2, .FAQ h2{
     text-decoration: underline;
-    text-decoration-color: #C3DBFB;
+    text-decoration-color: var(--text-color);
     background: #D50101;
-    border-radius: 40px; 
+    border-radius: 40px;
+    color: var(--text-color); 
 }
+
