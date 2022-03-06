@@ -201,5 +201,7 @@ h1{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    border-radius: 20%;
+    box-shadow:5px 10px rgba(255, 0, 0, 0.8);
   }
 
